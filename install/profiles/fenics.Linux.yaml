@@ -70,3 +70,4 @@ packages:
     build_with: |
       vtk
   libadjoint:
+  scipy:
