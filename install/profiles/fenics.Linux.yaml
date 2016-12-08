@@ -27,6 +27,7 @@ packages:
     use: mpich
   blas:
     use: openblas
+    extra_flags: TARGET=Haswell
   lapack:
     use: openblas
   hypre:
@@ -56,7 +57,7 @@ packages:
   ipython:
   matplotlib:
   vtk:
-    vtk_wrap_python: false
+    vtk_wrap_python: true
   ffc:
   fiat:
   instant:
@@ -68,3 +69,4 @@ packages:
   mshr:
     build_with: |
       vtk
+  libadjoint
