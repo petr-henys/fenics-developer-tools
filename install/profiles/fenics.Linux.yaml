@@ -28,6 +28,7 @@ packages:
   blas:
     use: openblas
     extra_flags: TARGET=Broadwell
+    extra_flags: TARGET=Broadwell
   lapack:
     use: openblas
   hypre:
