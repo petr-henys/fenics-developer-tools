@@ -69,4 +69,4 @@ packages:
   mshr:
     build_with: |
       vtk
-  libadjoint
+  libadjoint:
