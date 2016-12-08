@@ -71,3 +71,4 @@ packages:
       vtk
   libadjoint:
   scipy:
+  dolfin-adjoint:
