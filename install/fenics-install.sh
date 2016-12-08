@@ -97,7 +97,7 @@ echo ""
 
 # Download FEniCS Install
 echo "Downloading FEniCS Install..."
-git clone https://bitbucket.org/fenics-project/fenics-developer-tools.git
+git clone https://github.com/petr-henys/fenics-developer-tools.git
 echo ""
 
 # Run hit init-home to initialize hashdist directory if it does not exist and
