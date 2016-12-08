@@ -72,4 +72,3 @@ packages:
   libadjoint:
   scipy:
   dolfin-adjoint:
-    build_with: ipopt
