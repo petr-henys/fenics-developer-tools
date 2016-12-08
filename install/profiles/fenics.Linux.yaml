@@ -27,10 +27,9 @@ packages:
     use: mpich
   blas:
     use: openblas
-    extra_flags: TARGET=Broadwell
-    extra_flags: TARGET=Broadwell
   lapack:
     use: openblas
+    extra_flags: TARGET=Broadwell
   hypre:
     with_openblas: true
     without_check: true
