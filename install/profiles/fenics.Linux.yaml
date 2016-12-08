@@ -27,7 +27,7 @@ packages:
     use: mpich
   blas:
     use: openblas
-    extra_flags: TARGET=Haswell
+    extra_flags: TARGET=Broadwell
   lapack:
     use: openblas
   hypre:
