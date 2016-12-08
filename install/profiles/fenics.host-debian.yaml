@@ -1,0 +1,107 @@
+# This profile file controls your <#> (HashDist) build environment.
+
+# In the future, we'll provide better incorporation of
+# automatic environment detection.  For now, have a look
+# at the YAML files in the top-level directory and choose
+# the most *specific* file that matches your environment.
+
+extends:
+- file: debian.yaml
+
+# The packages list specifies all the packages that you
+# require installed.  <#> will ensure that all packages
+# and their dependencies are installed when you build this
+# profile.
+
+packages:
+  launcher:
+  python:
+    host: true
+    use_python_host_packages: true
+  numpy:
+    use: host-numpy
+  scipy:
+    use: host-scipy
+  mpi:
+    use: host-mpi
+  cmake:
+    use: host-cmake
+  blas:
+    use: host-blas
+  lapack:
+    use: host-lapack
+  swig:
+  pkg-config:
+    use: host-pkg-config
+  bzip2:
+    use: host-bzip2
+  boost:
+    use: host-boost
+  ipython:
+    use: host-ipython
+  matplotlib:
+    use: host-matplotlib
+  vtk:
+    use: host-vtk
+  zlib:
+    use: host-zlib
+  libxml2:
+    use: host-libxml2
+  ply:
+    use: host-ply
+  six:
+    use: host-six
+  sympy:
+    use: host-sympy
+  libtiff:
+    use: host-libtiff
+  flex:
+    use: host-flex
+  bison:
+    use: host-bison
+  m4:
+    use: host-m4
+  gmp:
+    use: host-gmp
+  mpfr:
+    use: host-mpfr
+  cython:
+    use: host-cython
+  szip:
+    use: host-szip
+  gnused:
+    use: host-sed
+  openssl:
+    use: host-ssl
+  mpi4py:
+  hdf5:
+  parmetis:
+  petsc4py:
+    version: '3.6.0'
+  suitesparse:
+  scotch:
+  slepc:
+    version: '3.6.1'
+  slepc4py:
+    version: '3.6.0'
+  eigen:
+  petsc:
+    version: '3.6.1'
+    build_with: |
+      parmetis, scotch, suitesparse, superlu_dist, hypre
+    download: |
+      ml
+    coptflags: -O2
+    link: shared
+    debug: false
+  ffc:
+  fiat:
+  instant:
+  ufl:
+  dolfin:
+    build_with: |
+      hdf5, parmetis, petsc, petsc4py, suitesparse, scotch, slepc, slepc4py, vtk, zlib
+    with_find_path: true
+  mshr:
+    build_with: |
+      vtk

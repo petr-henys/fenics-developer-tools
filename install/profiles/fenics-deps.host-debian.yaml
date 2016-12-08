@@ -1,0 +1,119 @@
+# The following debian packages should be installed when using this
+# profile:
+#
+# git curl python-dev time build-essential gfortran freeglut3-dev
+# cmake libopenmpi-dev openmpi-bin libblas-dev liblapack-dev
+# libboost-all-dev ipython python-matplotlib libvtk6-dev libbz2-dev
+# libxml2-dev python-numpy pkgconf python-ply python-six python-sympy
+# libgmp3-dev libmpfr-dev python-pytest python-pytest-cov
+# python-setuptools python-pip python-scipy libtiff5-dev flex bison m4
+# cython libsz2 sed openssl
+
+# This profile file controls your <#> (HashDist) build environment.
+
+# In the future, we'll provide better incorporation of
+# automatic environment detection.  For now, have a look
+# at the YAML files in the top-level directory and choose
+# the most *specific* file that matches your environment.
+
+extends:
+- file: debian.yaml
+
+# The packages list specifies all the packages that you
+# require installed.  <#> will ensure that all packages
+# and their dependencies are installed when you build this
+# profile.
+
+packages:
+  launcher:
+  cmake:
+    use: host-cmake
+  python:
+    host: true
+    use_python_host_packages: true
+  mpi:
+    use: host-mpi
+  blas:
+    use: host-blas
+  lapack:
+    use: host-lapack
+  hypre:
+    without_check: true
+  petsc:
+    sources:
+    - key: git:fa7b4c743107b9ba8085bbbb2b8aa6b58c9605a0
+      url: https://bitbucket.org/petsc/petsc.git  # refs/heads/maint
+    build_with: |
+      parmetis, scotch, suitesparse, hypre
+    download: |
+      mumps, scalapack, blacs, ml, superlu_dist
+    coptflags: -O2
+    link: shared
+    debug: false
+  swig:
+  boost:
+    use: host-boost
+  ipython:
+    use: host-ipython
+  matplotlib:
+    use: host-matplotlib
+  mpi4py:
+  hdf5:
+  parmetis:
+  petsc4py:
+    version: '3.6.0'
+  suitesparse:
+  scotch:
+  slepc:
+    version: '3.6.1'
+  slepc4py:
+    version: '3.6.0'
+  vtk:
+    use: host-vtk
+  zlib:
+    use: host-zlib
+  bzip2:
+    use: host-bzip2
+  eigen:
+  libxml2:
+    use: host-libxml2
+  numpy:
+    use: host-numpy
+  pkg-config:
+    use: host-pkg-config
+  ply:
+    use: host-ply
+  six:
+    use: host-six
+  sympy:
+    use: host-sympy
+  gmp:
+    use: host-gmp
+  mpfr:
+    use: host-mpfr
+  pytest:
+    use: host-pytest
+  pytest-cov:
+    use: host-pytest-cov
+  setuptools:
+    use: host-setuptools
+  pip:
+    use: host-pip
+  scipy:
+    use: host-scipy
+  libtiff:
+    use: host-libtiff
+  flex:
+    use: host-flex
+  bison:
+    use: host-bison
+  m4:
+    use: host-m4
+  cython:
+    use: host-cython
+  szip:
+    use: host-szip
+  gnused:
+    use: host-sed
+  openssl:
+    use: host-ssl
